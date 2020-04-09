@@ -10,5 +10,5 @@ RUN npm run build
 
 #Run phase
 FROM nginx
-#check docker hub for nginx, /usr/share/nginx/html
+#check docker hub for nginx, /usr/share/nginx/htmldocker pull dockerleho8808g/docker-react
 COPY --from=builder /app/build /usr/share/nginx/html 
