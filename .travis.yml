@@ -2,10 +2,23 @@ sudo: require
 services:
     - docker
 
-
 before_install:
     - docker build -t dockerleho8808g/docker-react -f Dockerfile.dev .
 
-
 script:
     - docker run -e CI=true dockerleho8808g/docker-react npm run test
+
+deploy:
+    #edge: true
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker-react"
+    env: "DockerReact-env"
+    bucket_name: "elasticbeanstalk-us-east-2-839324662233"
+    bucket_path: "docker-react"
+    on:
+        branch: master
+    #DockerReact-env.eba-3amv5izq.us-east-2.elasticbeanstalk.com (e-b3cgct2bhm) 
+    #Application 'docker-react' environments
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
