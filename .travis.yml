@@ -12,10 +12,10 @@ deploy:
     #edge: true
     provider: elasticbeanstalk
     region: "us-east-2"
-    app: "docker-react"
-    env: "DockerReact-env"
+    app: "docker-react-1"
+    env: "DockerReact1-env"
     bucket_name: "elasticbeanstalk-us-east-2-839324662233"
-    bucket_path: "docker-react"
+    bucket_path: "docker-react-1"
     on:
         branch: master
     #DockerReact-env.eba-3amv5izq.us-east-2.elasticbeanstalk.com (e-b3cgct2bhm) 
